@@ -24,9 +24,19 @@ func _ready():
 		dir.make_dir_recursive(SAVE_DIR)
 	
 	var file = File.new()
-	var error = file.open(save_path, File.WRITE)
-	if error == OK:
+	if file.file_exists(save_path):
 		file.close()
+		var error = file.open(save_path, File.READ)
+		if error == OK:
+			if file.get_len() > 0:
+				status.text = "There's a save file here"
+			else:
+				status.text = "Fresh save slot"
+	else:
+		var error = file.open(save_path, File.WRITE)
+		if error == OK:
+			status.text = "Fresh save slot"
+			file.close()
 
 
 func _on_Save_pressed():
@@ -38,6 +48,7 @@ func _on_Save_pressed():
 	var error = file.open(save_path, File.WRITE)
 	if error == OK:
 		file.store_var(data.get_current_data())
+		status.text = "There's a save file here"
 		file.close()
 
 
