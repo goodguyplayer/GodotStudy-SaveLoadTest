@@ -1,9 +1,12 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://resources/UbuntuMono-R.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://resources/UbuntuMono-B.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://scripts/ActionRemapButton.gd" type="Script" id=3]
 [ext_resource path="res://scripts/Data4Screens.gd" type="Script" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=5]
+[ext_resource path="res://scripts/SaveSlot.gd" type="Script" id=6]
+[ext_resource path="res://scripts/SaveLoadSlots.gd" type="Script" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
@@ -152,9 +155,189 @@ margin_top = 5.0
 margin_right = -5.0
 margin_bottom = -5.0
 rect_min_size = Vector2( 502, 0 )
+script = ExtResource( 7 )
 
 [node name="Panel" type="Panel" parent="SaveLoadButtons"]
 margin_right = 502.0
 margin_bottom = 590.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SaveLoadButtons/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Header" type="Label" parent="SaveLoadButtons/Panel/VBoxContainer"]
+margin_right = 502.0
+margin_bottom = 17.0
+custom_fonts/font = SubResource( 1 )
+text = "SAVE"
+align = 1
+
+[node name="SaveSlot0" type="HBoxContainer" parent="SaveLoadButtons/Panel/VBoxContainer"]
+margin_top = 21.0
+margin_right = 502.0
+margin_bottom = 85.0
+script = ExtResource( 6 )
+
+[node name="TextureRect" type="TextureRect" parent="SaveLoadButtons/Panel/VBoxContainer/SaveSlot0"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 5 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SaveLoadButtons/Panel/VBoxContainer/SaveSlot0"]
+margin_left = 68.0
+margin_right = 155.0
+margin_bottom = 64.0
+
+[node name="Save0" type="Label" parent="SaveLoadButtons/Panel/VBoxContainer/SaveSlot0/VBoxContainer"]
+margin_right = 87.0
+margin_bottom = 14.0
+text = "SAVE 0"
+
+[node name="Status" type="Label" parent="SaveLoadButtons/Panel/VBoxContainer/SaveSlot0/VBoxContainer"]
+margin_top = 18.0
+margin_right = 87.0
+margin_bottom = 32.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SaveLoadButtons/Panel/VBoxContainer/SaveSlot0/VBoxContainer"]
+margin_top = 36.0
+margin_right = 87.0
+margin_bottom = 56.0
+
+[node name="Save" type="Button" parent="SaveLoadButtons/Panel/VBoxContainer/SaveSlot0/VBoxContainer/HBoxContainer"]
+margin_right = 41.0
+margin_bottom = 20.0
+text = "Save"
+
+[node name="Load" type="Button" parent="SaveLoadButtons/Panel/VBoxContainer/SaveSlot0/VBoxContainer/HBoxContainer"]
+margin_left = 45.0
+margin_right = 87.0
+margin_bottom = 20.0
+text = "Load"
+
+[node name="SaveSlot1" type="HBoxContainer" parent="SaveLoadButtons/Panel/VBoxContainer"]
+margin_top = 89.0
+margin_right = 502.0
+margin_bottom = 153.0
+script = ExtResource( 6 )
+
+[node name="TextureRect" type="TextureRect" parent="SaveLoadButtons/Panel/VBoxContainer/SaveSlot1"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 5 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SaveLoadButtons/Panel/VBoxContainer/SaveSlot1"]
+margin_left = 68.0
+margin_right = 155.0
+margin_bottom = 64.0
+
+[node name="Save1" type="Label" parent="SaveLoadButtons/Panel/VBoxContainer/SaveSlot1/VBoxContainer"]
+margin_right = 87.0
+margin_bottom = 14.0
+text = "SAVE 1"
+
+[node name="Status" type="Label" parent="SaveLoadButtons/Panel/VBoxContainer/SaveSlot1/VBoxContainer"]
+margin_top = 18.0
+margin_right = 87.0
+margin_bottom = 32.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SaveLoadButtons/Panel/VBoxContainer/SaveSlot1/VBoxContainer"]
+margin_top = 36.0
+margin_right = 87.0
+margin_bottom = 56.0
+
+[node name="Save" type="Button" parent="SaveLoadButtons/Panel/VBoxContainer/SaveSlot1/VBoxContainer/HBoxContainer"]
+margin_right = 41.0
+margin_bottom = 20.0
+text = "Save"
+
+[node name="Load" type="Button" parent="SaveLoadButtons/Panel/VBoxContainer/SaveSlot1/VBoxContainer/HBoxContainer"]
+margin_left = 45.0
+margin_right = 87.0
+margin_bottom = 20.0
+text = "Load"
+
+[node name="SaveSlot2" type="HBoxContainer" parent="SaveLoadButtons/Panel/VBoxContainer"]
+margin_top = 157.0
+margin_right = 502.0
+margin_bottom = 221.0
+script = ExtResource( 6 )
+
+[node name="TextureRect" type="TextureRect" parent="SaveLoadButtons/Panel/VBoxContainer/SaveSlot2"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 5 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SaveLoadButtons/Panel/VBoxContainer/SaveSlot2"]
+margin_left = 68.0
+margin_right = 155.0
+margin_bottom = 64.0
+
+[node name="Save2" type="Label" parent="SaveLoadButtons/Panel/VBoxContainer/SaveSlot2/VBoxContainer"]
+margin_right = 87.0
+margin_bottom = 14.0
+text = "SAVE 2"
+
+[node name="Status" type="Label" parent="SaveLoadButtons/Panel/VBoxContainer/SaveSlot2/VBoxContainer"]
+margin_top = 18.0
+margin_right = 87.0
+margin_bottom = 32.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SaveLoadButtons/Panel/VBoxContainer/SaveSlot2/VBoxContainer"]
+margin_top = 36.0
+margin_right = 87.0
+margin_bottom = 56.0
+
+[node name="Save" type="Button" parent="SaveLoadButtons/Panel/VBoxContainer/SaveSlot2/VBoxContainer/HBoxContainer"]
+margin_right = 41.0
+margin_bottom = 20.0
+text = "Save"
+
+[node name="Load" type="Button" parent="SaveLoadButtons/Panel/VBoxContainer/SaveSlot2/VBoxContainer/HBoxContainer"]
+margin_left = 45.0
+margin_right = 87.0
+margin_bottom = 20.0
+text = "Load"
+
+[node name="SaveSlot3" type="HBoxContainer" parent="SaveLoadButtons/Panel/VBoxContainer"]
+margin_top = 225.0
+margin_right = 502.0
+margin_bottom = 289.0
+script = ExtResource( 6 )
+
+[node name="TextureRect" type="TextureRect" parent="SaveLoadButtons/Panel/VBoxContainer/SaveSlot3"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 5 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SaveLoadButtons/Panel/VBoxContainer/SaveSlot3"]
+margin_left = 68.0
+margin_right = 155.0
+margin_bottom = 64.0
+
+[node name="Save3" type="Label" parent="SaveLoadButtons/Panel/VBoxContainer/SaveSlot3/VBoxContainer"]
+margin_right = 87.0
+margin_bottom = 14.0
+text = "SAVE 3"
+
+[node name="Status" type="Label" parent="SaveLoadButtons/Panel/VBoxContainer/SaveSlot3/VBoxContainer"]
+margin_top = 18.0
+margin_right = 87.0
+margin_bottom = 32.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SaveLoadButtons/Panel/VBoxContainer/SaveSlot3/VBoxContainer"]
+margin_top = 36.0
+margin_right = 87.0
+margin_bottom = 56.0
+
+[node name="Save" type="Button" parent="SaveLoadButtons/Panel/VBoxContainer/SaveSlot3/VBoxContainer/HBoxContainer"]
+margin_right = 41.0
+margin_bottom = 20.0
+text = "Save"
+
+[node name="Load" type="Button" parent="SaveLoadButtons/Panel/VBoxContainer/SaveSlot3/VBoxContainer/HBoxContainer"]
+margin_left = 45.0
+margin_right = 87.0
+margin_bottom = 20.0
+text = "Load"
 
 [connection signal="pressed" from="Data/VBoxContainer2/HBoxContainer/Clear" to="Data" method="_on_Clear_pressed"]
