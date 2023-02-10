@@ -1,0 +1,217 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://resources/UbuntuMono-R.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://resources/UbuntuMono-B.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scripts/ActionRemapButton.gd" type="Script" id=3]
+[ext_resource path="res://scripts/Data4Screens.gd" type="Script" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=5]
+[ext_resource path="res://scripts/SaveSlot.gd" type="Script" id=6]
+[ext_resource path="res://scripts/SaveLoadSlots.gd" type="Script" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 1 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Data" type="MarginContainer" parent="."]
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 507.0
+margin_bottom = -5.0
+script = ExtResource( 4 )
+
+[node name="Panel" type="Panel" parent="Data"]
+margin_right = 502.0
+margin_bottom = 590.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Data"]
+margin_right = 502.0
+margin_bottom = 590.0
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Data/VBoxContainer2"]
+margin_right = 502.0
+margin_bottom = 566.0
+size_flags_vertical = 3
+
+[node name="Header" type="Label" parent="Data/VBoxContainer2/VBoxContainer"]
+margin_right = 502.0
+margin_bottom = 17.0
+custom_fonts/font = SubResource( 1 )
+text = "DATA"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Data/VBoxContainer2/VBoxContainer"]
+margin_top = 21.0
+margin_right = 502.0
+margin_bottom = 51.0
+rect_min_size = Vector2( 0, 30 )
+
+[node name="Label" type="Label" parent="Data/VBoxContainer2/VBoxContainer/HBoxContainer"]
+margin_top = 6.0
+margin_right = 112.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 2 )
+text = "Give me a name"
+align = 2
+
+[node name="Name" type="TextEdit" parent="Data/VBoxContainer2/VBoxContainer/HBoxContainer"]
+margin_left = 116.0
+margin_right = 502.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 3 )
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Data/VBoxContainer2/VBoxContainer"]
+margin_top = 55.0
+margin_right = 502.0
+margin_bottom = 85.0
+rect_min_size = Vector2( 0, 30 )
+
+[node name="Label" type="Label" parent="Data/VBoxContainer2/VBoxContainer/HBoxContainer2"]
+margin_top = 6.0
+margin_right = 64.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 2 )
+text = "Slide it"
+align = 2
+
+[node name="Slide" type="HSlider" parent="Data/VBoxContainer2/VBoxContainer/HBoxContainer2"]
+margin_left = 68.0
+margin_right = 502.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Data/VBoxContainer2/VBoxContainer"]
+margin_top = 89.0
+margin_right = 502.0
+margin_bottom = 119.0
+rect_min_size = Vector2( 0, 30 )
+
+[node name="Label" type="Label" parent="Data/VBoxContainer2/VBoxContainer/HBoxContainer3"]
+margin_top = 6.0
+margin_right = 120.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 2 )
+text = "Select a number"
+align = 2
+
+[node name="Number" type="SpinBox" parent="Data/VBoxContainer2/VBoxContainer/HBoxContainer3"]
+margin_left = 124.0
+margin_right = 502.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Data/VBoxContainer2/VBoxContainer"]
+margin_top = 123.0
+margin_right = 502.0
+margin_bottom = 153.0
+rect_min_size = Vector2( 0, 30 )
+
+[node name="Label" type="Label" parent="Data/VBoxContainer2/VBoxContainer/HBoxContainer4"]
+margin_top = 6.0
+margin_right = 88.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 2 )
+text = "Get a input"
+align = 2
+
+[node name="Input" type="Button" parent="Data/VBoxContainer2/VBoxContainer/HBoxContainer4"]
+margin_left = 92.0
+margin_right = 502.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+toggle_mode = true
+script = ExtResource( 3 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Data/VBoxContainer2"]
+margin_top = 570.0
+margin_right = 502.0
+margin_bottom = 590.0
+alignment = 2
+
+[node name="Clear" type="Button" parent="Data/VBoxContainer2/HBoxContainer"]
+margin_left = 409.0
+margin_right = 502.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 50, 0 )
+text = "Reset / Clear"
+
+[node name="SaveLoadButtons" type="MarginContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -507.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+rect_min_size = Vector2( 502, 0 )
+script = ExtResource( 7 )
+
+[node name="Panel" type="Panel" parent="SaveLoadButtons"]
+margin_right = 502.0
+margin_bottom = 590.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SaveLoadButtons/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Header" type="Label" parent="SaveLoadButtons/Panel/VBoxContainer"]
+margin_right = 502.0
+margin_bottom = 17.0
+custom_fonts/font = SubResource( 1 )
+text = "SAVE"
+align = 1
+
+[node name="SaveSlot0" type="HBoxContainer" parent="SaveLoadButtons/Panel/VBoxContainer"]
+margin_top = 21.0
+margin_right = 502.0
+margin_bottom = 85.0
+script = ExtResource( 6 )
+
+[node name="TextureRect" type="TextureRect" parent="SaveLoadButtons/Panel/VBoxContainer/SaveSlot0"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 5 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SaveLoadButtons/Panel/VBoxContainer/SaveSlot0"]
+margin_left = 68.0
+margin_right = 155.0
+margin_bottom = 64.0
+
+[node name="Save0" type="Label" parent="SaveLoadButtons/Panel/VBoxContainer/SaveSlot0/VBoxContainer"]
+margin_right = 87.0
+margin_bottom = 14.0
+text = "SAVE 0"
+
+[node name="Status" type="Label" parent="SaveLoadButtons/Panel/VBoxContainer/SaveSlot0/VBoxContainer"]
+margin_top = 18.0
+margin_right = 87.0
+margin_bottom = 32.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SaveLoadButtons/Panel/VBoxContainer/SaveSlot0/VBoxContainer"]
+margin_top = 36.0
+margin_right = 87.0
+margin_bottom = 56.0
+
+[node name="Save" type="Button" parent="SaveLoadButtons/Panel/VBoxContainer/SaveSlot0/VBoxContainer/HBoxContainer"]
+margin_right = 41.0
+margin_bottom = 20.0
+text = "Save"
+
+[node name="Load" type="Button" parent="SaveLoadButtons/Panel/VBoxContainer/SaveSlot0/VBoxContainer/HBoxContainer"]
+margin_left = 45.0
+margin_right = 87.0
+margin_bottom = 20.0
+text = "Load"
+
+[connection signal="pressed" from="Data/VBoxContainer2/HBoxContainer/Clear" to="Data" method="_on_Clear_pressed"]
