@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "HBoxContainer",
+"class": "SaveSlotTemplate",
+"language": "GDScript",
+"path": "res://scripts/SaveSlotTemplate.gd"
+} ]
+_global_script_class_icons={
+"SaveSlotTemplate": ""
+}
+
 [application]
 
 config/name="Save Load Config Test"
